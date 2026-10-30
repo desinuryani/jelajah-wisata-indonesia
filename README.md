@@ -1,58 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+JELAJAH WISATA INDONESIA
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+IDENTITAS MAHASISWA
 
-## About Laravel
+Nama Lengkap: Desi Nuryani
+NIM: C2483207006
+Kelas: PT15A
+Program Studi: Pendidikan Teknologi Informasi
+Universitas: Universitas Muhammadiyah Tasikmalaya
+Judul Proyek: Jelajah Wisata Indonesia
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+DESKRIPSI APLIKASI
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Jelajah Wisata Indonesia merupakan website sederhana yang saya buat menggunakan framework Laravel. Website ini berisi informasi mengenai berbagai destinasi wisata yang ada di Indonesia.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Saya membuat website ini agar pengunjung bisa mengenal berbagai tempat wisata, mulai dari nama tempat, lokasi, kategori, hingga deskripsi singkat mengenai destinasi tersebut.
 
-## Learning Laravel
+Website ini memiliki beberapa halaman, yaitu Beranda, Tentang, Destinasi, Kategori, dan Detail Wisata. Setiap halaman memiliki fungsi yang berbeda dan saling terhubung melalui menu navigasi.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Dalam pembuatan aplikasi ini, saya menggunakan array PHP untuk menyimpan data wisata. Jadi, website ini tidak menggunakan database. Data yang sudah disiapkan di Controller kemudian dikirim dan ditampilkan melalui halaman Blade.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+TEKNOLOGI YANG DIGUNAKAN
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+1. PHP, sebagai bahasa pemrograman untuk mengolah data dan menjalankan aplikasi.
+2. Laravel, sebagai framework yang digunakan untuk membangun website.
+3. HTML, untuk membuat struktur halaman website.
+4. CSS, untuk mengatur tampilan dan desain website.
+5. Blade Template, untuk menampilkan data dan mengatur tampilan halaman pada Laravel.
 
-## Agentic Development
+PENJELASAN KONSEP MVC
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+1. Routing
 
-```bash
-composer require laravel/boost --dev
+Routing merupakan bagian yang mengatur alamat URL pada website dan menentukan halaman atau proses yang akan dijalankan ketika pengunjung membuka alamat tertentu.
 
-php artisan boost:install
-```
+Pada aplikasi ini, routing diatur melalui file routes/web.php.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Beberapa route yang digunakan antara lain:
+- / untuk halaman Beranda.
+- /tentang untuk halaman Tentang.
+- /destinasi untuk menampilkan daftar destinasi wisata.
+- /kategori untuk menampilkan kategori wisata.
+- /destinasi/{id} untuk menampilkan detail wisata berdasarkan ID destinasi.
 
-## Contributing
+Dengan adanya routing, setiap halaman dapat diakses melalui URL yang sesuai.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Controller
 
-## Code of Conduct
+Controller merupakan bagian yang mengatur proses aplikasi dan menyiapkan data sebelum ditampilkan ke halaman website.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Pada aplikasi ini, terdapat dua Controller, yaitu HomeController.php dan WisataController.php.
 
-## Security Vulnerabilities
+HomeController.php digunakan untuk mengatur halaman Beranda dan Tentang, sedangkan WisataController.php digunakan untuk mengatur daftar destinasi wisata, kategori, dan detail wisata.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Data destinasi wisata disimpan dalam bentuk array PHP di dalam Controller. Data tersebut kemudian dikirim ke View untuk ditampilkan kepada pengunjung.
 
-## License
+3. View
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+View merupakan bagian yang menampilkan informasi kepada pengunjung dalam bentuk halaman website.
+
+Pada aplikasi ini, halaman dibuat menggunakan Blade Template Laravel dan disimpan di dalam folder resources/views.
+
+Halaman yang tersedia meliputi:
+- home.blade.php untuk halaman Beranda.
+- tentang.blade.php untuk halaman Tentang.
+- wisata/index.blade.php untuk daftar destinasi wisata.
+- wisata/kategori.blade.php untuk kategori wisata.
+- wisata/detail.blade.php untuk detail wisata.
+- layouts/app.blade.php untuk layout utama yang digunakan bersama oleh halaman lain.
+
+Saya menggunakan @extends, @section, dan @yield untuk mengatur layout agar beberapa halaman dapat menggunakan struktur tampilan yang sama. Dengan begitu, bagian seperti navigasi dan struktur halaman bisa dibuat lebih konsisten.
+
+Selain itu, saya menggunakan @foreach untuk menampilkan data wisata dari array secara berulang sehingga tidak perlu menuliskan setiap data secara manual di halaman.
+
+SCREENSHOT APLIKASI
+
+1. Halaman Beranda
+<img width="1892" height="971" alt="Screenshot 2026-10-30 180935" src="https://github.com/user-attachments/assets/25c31b27-3c89-44c8-aa38-4ff6b125c455" />
+
+
+2. Halaman Daftar Destinasi Wisata
+<img width="1911" height="976" alt="Screenshot 2026-10-30 181006" src="https://github.com/user-attachments/assets/d18c25b4-46c6-4211-b7fd-a0334fe5cbff" />
+
+
+3. Halaman Detail Wisata
+<img width="1916" height="971" alt="Screenshot 2026-10-30 181044" src="https://github.com/user-attachments/assets/4237d357-7ada-4298-8f0e-064a6517128b" />
+
+
+CARA MENJALANKAN APLIKASI
+
+Untuk menjalankan aplikasi ini, berikut langkah-langkah yang perlu dilakukan:
+
+1. Pastikan PHP dan Composer sudah terpasang di komputer.
+2. Unduh atau clone source code dari repository GitHub.
+3. Buka terminal dan masuk ke folder proyek.
+4. Jalankan perintah composer install untuk memasang dependensi yang dibutuhkan Laravel.
+5. Salin file .env.example menjadi .env. Pada Windows, file tersebut juga bisa disalin secara manual.
+6. Jalankan perintah php artisan key:generate untuk membuat application key.
+7. Jalankan perintah php artisan serve untuk menjalankan server Laravel.
+8. Buka browser dan akses http://127.0.0.1:8000.
+
+Setelah itu, website Jelajah Wisata Indonesia dapat dibuka melalui browser.
+
+PENUTUP
+
+Melalui pembuatan website Jelajah Wisata Indonesia ini, saya belajar bagaimana membangun website menggunakan framework Laravel dengan menerapkan konsep Routing, Controller, dan View.
+
+Saya juga belajar menggunakan array PHP untuk menyimpan data, mengirimkan data dari Controller ke View, serta memanfaatkan Blade Template untuk menampilkan informasi pada halaman website.
+
+Walaupun aplikasi ini tidak menggunakan database, proyek ini membantu saya memahami alur dasar kerja Laravel, mulai dari pengaturan URL, pengolahan data di Controller, hingga menampilkan informasi kepada pengunjung melalui View.
+
+Saya berharap proyek ini bisa menjadi pengalaman dan latihan untuk meningkatkan pemahaman saya dalam mengembangkan website menggunakan Laravel.
